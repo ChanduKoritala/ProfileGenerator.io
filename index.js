@@ -1,6 +1,10 @@
 const inquirer = require("inquirer");
-const fs = require("fs");
+var fs = require("fs");
 const axios = require("axios");
+var pdf = require('html-pdf');
+var html = fs.readFileSync('./portfolio.html', 'utf8');
+var options = { format: 'Letter' };
+
 
 const data = {};
 // let html = generateHTML(data);
@@ -52,7 +56,10 @@ function init() {
           }
           console.log("File Generated: ");
         })
-        
+        pdf.create(html, options).toFile('./profile.pdf', function(err, res) {
+          if (err) return console.log(err);
+          console.log(res); 
+        });
       })
     })
     
