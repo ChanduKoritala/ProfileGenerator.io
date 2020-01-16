@@ -27,7 +27,7 @@ function init() {
     .then(function ({ username, color }) {
       const queryUrl = `https://api.github.com/users/${username}`;
       axios.get(queryUrl).then((res) => {
-        // data.name = name;
+        data.username = username;
         data.color = color;
         data.numOfRepo = res.data.public_repos;
         data.name = res.data.name
