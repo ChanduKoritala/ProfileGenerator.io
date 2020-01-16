@@ -27,7 +27,7 @@ function init() {
     .then(function ({ username, color }) {
       const queryUrl = `https://api.github.com/users/${username}`;
       axios.get(queryUrl).then((res) => {
-        data.username = username;
+        // data.name = name;
         data.color = color;
         data.numOfRepo = res.data.public_repos;
         data.name = res.data.name
@@ -253,7 +253,7 @@ function generateHTML(data) { // Generates HTML based on data given to create a 
              <div class='photo-header'>
                <img src="${data.portPic}"><br>
                <h1>Hi!</h1>
-               <h2>My name is ${data.username}</h2>
+               <h2>My name is ${data.name}</h2>
                <h3>Currently @ ${data.company}</h3>
                <div class="links-nav">
                  <a class="nav-link" href="https://www.google.com/maps/place/${data.location.split(' ')[0]}+${data.location.split(' ')[1]}">${data.location}</a>
