@@ -22,6 +22,6 @@ A PDF will be populated with the following information:
 * Number of users following
 
 Example:
-
+![](DevelopeProfile.PNG)
 
 
